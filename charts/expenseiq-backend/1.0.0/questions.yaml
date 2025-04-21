@@ -1,0 +1,119 @@
+categories:
+  - Business
+
+questions:
+  # Database Settings
+  - variable: env.DB_NAME
+    label: "Database Name"
+    type: string
+    default: "expense_platform_test"
+    required: true
+
+  - variable: env.DB_USERNAME
+    label: "Database Username"
+    type: string
+    default: "user"
+    required: true
+
+  - variable: env.DB_PASSWORD
+    label: "Database Password"
+    type: password
+    required: true
+
+  # MinIO Settings
+  - variable: env.MINIO_URL
+    label: "MinIO URL"
+    type: string
+    default: "http://192.168.0.207"
+    required: true
+
+  - variable: env.MINIO_BUCKET_NAME
+    label: "MinIO Bucket Name"
+    type: string
+    default: "eccc"
+    required: true
+
+  - variable: env.MINIO_ACCESS_KEY
+    label: "MinIO Access Key"
+    type: string
+    default: "access-key"
+    required: true
+
+  - variable: env.MINIO_SECRET_KEY
+    label: "MinIO Secret Key"
+    type: password
+    required: true
+
+  # Authentication / OAuth
+  - variable: env.OAUTH_ADMIN_ROLE_EMAIL
+    label: "OAuth Admin Email"
+    type: string
+    default: "admin@example.com"
+    required: true
+
+  - variable: env.OAUTH_REDIRECT_FRONTEND_URL
+    label: "OAuth Redirect Frontend URL"
+    type: string
+    default: "http://localhost:4200/dashboard"
+    required: true
+
+  - variable: env.OIDC_AUTH_SERVER_URL
+    label: "OIDC Auth Server URL"
+    type: string
+    default: "https://accounts.google.com"
+    required: true
+
+  - variable: env.OIDC_CLIENT_ID
+    label: "OIDC Client ID"
+    type: string
+    default: "your-client-id"
+    required: true
+
+  - variable: env.OIDC_CREDENTIALS_SECRET
+    label: "OIDC Credentials Secret"
+    type: password
+    required: true
+
+  # App Config & Flags
+  - variable: env.QUARKUS_OIDC_AUTHENTICATION_USER_INFO_REQUIRED
+    label: "Require OIDC User Info?"
+    type: boolean
+    default: true
+
+  - variable: env.QUARKUS_SWAGGER_UI_ALWAYS_INCLUDE
+    label: "Always Include Swagger UI?"
+    type: boolean
+    default: true
+
+  # CORS
+  - variable: env.HTTP_CORS_ORIGINS
+    label: "CORS Allowed Origins"
+    type: string
+    default: "http://localhost:4200, http://192.168.0.207:9180"
+    required: false
+
+  # Runtime / Misc
+  - variable: env.NVIDIA_VISIBLE_DEVICES
+    label: "NVIDIA Visible Devices"
+    type: string
+    default: "void"
+    required: false
+
+  - variable: env.TZ
+    label: "Time Zone"
+    type: string
+    default: "Europe/Zagreb"
+    required: true
+
+  # Ports
+  - variable: service.port
+    label: "Internal App Port"
+    type: int
+    default: 8083
+    required: true
+
+  - variable: service.externalPort
+    label: "External Access Port"
+    type: int
+    default: 9081
+    required: true

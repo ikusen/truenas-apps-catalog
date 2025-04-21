@@ -1,0 +1,29 @@
+image:
+  repository: ikusen/expense-platform-jvm
+  tag: 1.13.0-SNAPSHOT
+  pullPolicy: IfNotPresent
+
+service:
+  type: ClusterIP
+  port: 8083
+  targetPort: 8083
+  externalPort: 9081
+
+env:
+  DB_NAME: expense_platform_test
+  DB_USERNAME: user
+  DB_PASSWORD: ""
+  MINIO_URL: http://192.168.0.207
+  MINIO_BUCKET_NAME: eccc
+  MINIO_ACCESS_KEY: access-key
+  MINIO_SECRET_KEY: ""
+  OAUTH_ADMIN_ROLE_EMAIL: admin@example.com
+  OAUTH_REDIRECT_FRONTEND_URL: http://localhost:4200/dashboard
+  OIDC_AUTH_SERVER_URL: https://accounts.google.com
+  OIDC_CLIENT_ID: your-client-id
+  OIDC_CREDENTIALS_SECRET: ""
+  QUARKUS_OIDC_AUTHENTICATION_USER_INFO_REQUIRED: 'true'
+  QUARKUS_SWAGGER_UI_ALWAYS_INCLUDE: 'true'
+  HTTP_CORS_ORIGINS: http://localhost:4200, http://192.168.0.207:9180
+  NVIDIA_VISIBLE_DEVICES: void
+  TZ: Europe/Zagreb
